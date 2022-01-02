@@ -5,7 +5,7 @@
 }
 
 body {
-  font-family: sans-serif;
+  font-family: FreeMono, monospace;
 }
 
 /*обёртка*/
@@ -22,13 +22,17 @@ body {
   padding-bottom: 30px;
 }
 
+.heading-header {
+  color: rgba(2, 19, 31, 0.644);
+}
+
 .wrap-btn {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .btn-cart {
