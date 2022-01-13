@@ -126,4 +126,30 @@ body {
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
 }
+
+/* Корзина */
+.back-catalog {
+  margin-top: 30px;
+}
+
+.back-link {
+  text-decoration: none;
+  color: #3f4f52;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.back-link:hover .svg-arrow {
+  color: black;
+  fill: black;
+}
+
+.svg-arrow {
+  margin-right: 10px;
+  fill: #3f4f52;
+}
 /*# sourceMappingURL=style.css.map */

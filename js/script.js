@@ -1,4 +1,27 @@
+// https://github.com/GeekBrainsTutorial/online-store-api/
+
+
+
+
 'use strict';
+
+const API = 'https://raw.githubusercontent.com/GeekBrainsTutorial/online-store-api/master/responses';
+
+
+function getRequest(url, cb) {
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', url, true);
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4) {
+            if (xhr.status !== 200) {
+                console.log('Error!');
+            } else {
+                cb(xhr.responseText);
+            }
+        }
+    }
+    xhr.send();
+}
 
 class ProductList {
     constructor(container = '.products') {
@@ -7,17 +30,23 @@ class ProductList {
         this.allProducts = [];
 
         this.fetchGoodsData();
-        this.render();
         this.totalPriceProducts();
     }
 
     fetchGoodsData() {
-        this.goods = [
+        getRequest(`${API}/catalogData.json`, (response) => {
+            console.log(response);
+            this.goods = JSON.parse(response);
+            console.log(this.goods);
+            this.render();
+        });
+
+        /*this.goods = [
             { id: 1, title: 'Notebook', price: 1000, imageUrl: "img/notebook.jpg" },
             { id: 2, title: 'Mouse', price: 100, imageUrl: "img/mouse.jpg" },
             { id: 3, title: 'Keyboard', price: 250, imageUrl: "img/keyboard.jpg" },
             { id: 4, title: 'Gamepad', price: 150, imageUrl: "img/gamepad.jpg" },
-        ];
+        ];*/
     }
 
     render() {

@@ -94,3 +94,25 @@ body {
         transform: scale(1.1);
     }
 }
+
+/* Корзина */
+
+.back-catalog {
+    margin-top: 30px;
+}
+
+.back-link {
+    text-decoration: none;
+    color: rgb(63, 79, 82);
+    display: flex;
+    align-items: center;
+    &:hover .svg-arrow {
+        color: black;
+        fill: black;
+    }
+}
+
+.svg-arrow {
+    margin-right: 10px;
+    fill: rgb(63, 79, 82);
+}
