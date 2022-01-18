@@ -4,7 +4,7 @@
 }
 
 body {
-    font-family: sans-serif;
+    font-family: FreeMono, monospace;
 }
 
 /*обёртка*/
@@ -21,9 +21,13 @@ body {
     padding-bottom: 30px;
 }
 
+.heading-header {
+    color: rgba(2, 19, 31, 0.644);
+}
+
 .wrap-btn {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
 }
 
 .btn-cart {
@@ -31,6 +35,7 @@ body {
     padding: 10px 20px;
     box-shadow: 6px 4px 35px rgba(2, 19, 31, 0.644);
     transition: 0.3s;
+    position: relative;
     &:hover {
         transform: scale(1.1);
     }
@@ -62,7 +67,7 @@ body {
     margin-top: 20px;
 }
 
-.product-info {
+.desc {
     margin-top: 30px;
     padding-bottom: 30px;
     display: flex;
@@ -80,7 +85,7 @@ body {
     color: rgb(63, 79, 82);
 }
 
-.by-btn {
+.buy-btn {
     color: rgb(44, 56, 58);
     padding: 5px 60px;
     box-shadow: 6px 4px 35px rgba(2, 19, 31, 0.123);
@@ -89,4 +94,82 @@ body {
     &:hover {
         transform: scale(1.1);
     }
+}
+
+/* Корзина */
+
+.back-catalog {
+    margin-top: 30px;
+}
+
+.back-link {
+    text-decoration: none;
+    color: rgb(63, 79, 82);
+    display: flex;
+    align-items: center;
+    &:hover .svg-arrow {
+        color: black;
+        fill: black;
+    }
+}
+
+.svg-arrow {
+    margin-right: 10px;
+    fill: rgb(63, 79, 82);
+}
+
+// Корзина на главной страничке
+
+.cart-block {
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.62);
+    border-radius: 5px;
+    box-sizing: border-box;
+    right: 221px;
+    top: 17%;
+    position: absolute;
+    background-color: white;
+    padding: 20px;
+    color: black;
+    width: 300px;
+}
+
+.cart-block:before {
+    content: "";
+    width: 0;
+    height: 0;
+    position: absolute;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+}
+.cart-item:not(:last-child) {
+    margin-bottom: 20px;
+}
+.product-bio {
+    display: flex;
+}
+.cart-item img {
+    align-self: flex-start;
+    margin-right: 15px;
+}
+
+.product-single-price {
+    color: #474747;
+    font-size: 0.5em;
+}
+.product-price {
+    margin-left: 30px;
+}
+.product-desc {
+    max-width: 150px;
+}
+.product-quantity {
+    margin-top: 15px;
+    font-size: 0.75em;
+}
+
+.invisible {
+    display: none;
 }
