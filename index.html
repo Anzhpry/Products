@@ -10,7 +10,41 @@
 </head>
 
 <body>
-    <header class="header">
+    <div id="app">
+        <header class="wrapper">
+            <div class="logo">Интернет-магазин</div>
+            <div class="cart">
+                <form action="#" class="search-form">
+                    <input type="text" class="search-field">
+                    <button class="btn-search" type="submit">
+                        <svg fill="#ffffff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" width="25px"
+                            height="25px">
+                            <path
+                                d="M 21 3 C 11.601563 3 4 10.601563 4 20 C 4 29.398438 11.601563 37 21 37 C 24.355469 37 27.460938 36.015625 30.09375 34.34375 L 42.375 46.625 L 46.625 42.375 L 34.5 30.28125 C 36.679688 27.421875 38 23.878906 38 20 C 38 10.601563 30.398438 3 21 3 Z M 21 7 C 28.199219 7 34 12.800781 34 20 C 34 27.199219 28.199219 33 21 33 C 13.800781 33 8 27.199219 8 20 C 8 12.800781 13.800781 7 21 7 Z" />
+                        </svg>
+                    </button>
+                </form>
+                <button class="btn-cart" type="button">Корзина</button>
+            </div>
+        </header>
+        <main>
+            <div class="products">
+                <div class="product-item" v-for="product of products" :key="product.id_product">
+                    <img :src="imgCatalog" alt="Some img">
+                    <div class="desc">
+                        <h3>{{product.product_name}}</h3>
+                        <p>{{product.price}}₽</p>
+                        <button class="buy-btn" @click="addProduct(product)">Купить</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+
+
+
+    <!--   <header class="header">
 
         <div class="wrapper wrap-btn">
             <h1 class="heading-header">Интернет-магазин</h1>
@@ -22,7 +56,8 @@
     <main>
         <div class="wrapper products"></div>
 
-    </main>
+    </main> -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="js/script.js"></script>
 
 
