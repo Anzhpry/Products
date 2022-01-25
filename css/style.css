@@ -182,6 +182,12 @@ header {
   margin-top: 8px;
 }
 
+
+.product-title {
+  font-weight: bold;
+
+}
+
 /* Корзина */
 .back-catalog {
   margin-top: 30px;
