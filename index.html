@@ -11,59 +11,23 @@
 
 <body>
     <div id="app">
-        <header class="wrapper">
+        <header>
             <div class="logo">Интернет-магазин</div>
             <div class="cart">
-                <form action="#" class="search-form" @submit.prevent="filter">
-                    <input type="text" class="search-field" v-model="userSearch">
-                    <button class="btn-search" type="submit">
-                        <svg fill="#ffffff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" width="25px"
-                            height="25px">
-                            <path
-                                d="M 21 3 C 11.601563 3 4 10.601563 4 20 C 4 29.398438 11.601563 37 21 37 C 24.355469 37 27.460938 36.015625 30.09375 34.34375 L 42.375 46.625 L 46.625 42.375 L 34.5 30.28125 C 36.679688 27.421875 38 23.878906 38 20 C 38 10.601563 30.398438 3 21 3 Z M 21 7 C 28.199219 7 34 12.800781 34 20 C 34 27.199219 28.199219 33 21 33 C 13.800781 33 8 27.199219 8 20 C 8 12.800781 13.800781 7 21 7 Z" />
-                        </svg>
-                    </button>
-                </form>
-                <button class="btn-cart" type="button" @click="showCart = !showCart">Корзина</button>
-                <div class="cart-block" v-show="showCart">
-                    <p v-if="!cartItems.length">Корзина пуста</p>
-                    <div class="cart-item" v-for="item of cartItems" :key="item.id_product">
-                        <div class="product-bio">
-                            <img :src="imgCart" alt="Some image">
-                            <div class="product-desc">
-                                <p class="product-title">{{item.product_name}}</p>
-                                <p class="product-quantity">Количество: {{item.quantity}}</p>
-                                <p class="product-single-price">{{item.price}}₽ за единицу</p>
-                            </div>
-                        </div>
-                        <div class="а">
-                            <p class="product-price">{{item.quantity*item.price}}₽</p>
-                            <button class="del-btn" @click="remove(item)">&times;</button>
-                        </div>
-                    </div>
-                </div>
+                <filter-el></filter-el>
+                <cart ref="cart"></cart>
             </div>
         </header>
         <main>
-            <div class="products">
-                <p v-if="!filtered.length">Нет данных</p>
-                <div class="product-item" v-for="product of filtered" :key="product.id_product">
-                    <img :src="imgCatalog" alt="Some img">
-                    <div class="desc">
-                        <h3>{{product.product_name}}</h3>
-                        <p>{{product.price}}₽</p>
-                        <button class="buy-btn" @click="addProduct(product)">Купить</button>
-                    </div>
-                </div>
-            </div>
+            <products ref="products"></products>
         </main>
     </div>
 
-
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <script src="js/script.js"></script>
+    <script src="js/FilterComp.js"></script>
     <script src="js/CartComp.js"></script>
     <script src="js/ProducComp.js"></script>
+    <script src="js/script.js"></script>
 </body>
 
 </html>
