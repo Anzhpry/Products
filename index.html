@@ -10,19 +10,24 @@
 </head>
 
 <body>
-    <header class="header">
-        <div class="wrapper wrap-btn">
-            <button class="btn-cart" type="button">Корзина</button>
-        </div>
-    </header>
+    <div id="app">
+        <header>
+            <div class="logo">Интернет-магазин</div>
+            <div class="cart">
+                <filter-el></filter-el>
+                <cart ref="cart"></cart>
+            </div>
+        </header>
+        <main>
+            <products ref="products"></products>
+        </main>
+    </div>
 
-    <main>
-        <div class="wrapper products"></div>
-
-    </main>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="js/FilterComp.js"></script>
+    <script src="js/CartComp.js"></script>
+    <script src="js/ProducComp.js"></script>
     <script src="js/script.js"></script>
-
-
 </body>
 
 </html>

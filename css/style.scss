@@ -4,31 +4,32 @@
 }
 
 body {
-    font-family: sans-serif;
+    font-family: FreeMono, monospace;
 }
 
-/*обёртка*/
-.wrapper {
-    width: 1000px;
-    margin: 0 auto;
-}
-
-/*шапка*/
-.header {
-    width: 100%;
+header {
     background: rgb(63, 79, 82);
-    padding-top: 30px;
-    padding-bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+    padding: 70px 150px;
 }
 
-.wrap-btn {
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+    color: rgb(192, 210, 212);
+}
+
+.cart {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
+    gap: 20px;
 }
 
 .btn-cart {
+    position: relative;
     color: rgb(44, 56, 58);
-    padding: 10px 20px;
+    padding: 15px 33px;
     box-shadow: 6px 4px 35px rgba(2, 19, 31, 0.644);
     transition: 0.3s;
     &:hover {
@@ -36,7 +37,25 @@ body {
     }
 }
 
-/*добавленные элементы с js*/
+.search-form {
+    align-self: end;
+}
+
+.search-field {
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid rgb(192, 210, 212);
+    padding: 7px 10px;
+    font-size: 16px;
+    color: rgb(192, 210, 212);
+    &:focus {
+        outline: none;
+    }
+}
+
+.btn-search {
+    background: none;
+}
 
 .products {
     display: flex;
@@ -57,30 +76,14 @@ body {
     margin-bottom: 50px;
 }
 
-.img-product {
-    max-width: 60%;
-    margin-top: 20px;
-}
-
-.product-info {
+.desc {
     margin-top: 30px;
     padding-bottom: 30px;
     display: flex;
     flex-direction: column;
 }
 
-.title-product {
-    padding-bottom: 20px;
-    font-size: 24px;
-}
-
-.text-product {
-    padding-bottom: 20px;
-    font-size: 18px;
-    color: rgb(63, 79, 82);
-}
-
-.by-btn {
+.buy-btn {
     color: rgb(44, 56, 58);
     padding: 5px 60px;
     box-shadow: 6px 4px 35px rgba(2, 19, 31, 0.123);
@@ -89,4 +92,64 @@ body {
     &:hover {
         transform: scale(1.1);
     }
+}
+
+/* Корзина в коталоге  */
+
+.cart-block {
+    position: absolute;
+    background: rgb(153, 157, 158);
+    border: 1px solid rgb(75, 115, 122);
+    border-radius: 15px;
+    padding: 15px 20px;
+    right: 70px;
+    top: 130px;
+}
+
+.cart-item {
+    padding-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.product-bio {
+    display: flex;
+    gap: 20px;
+
+    width: 50%;
+}
+
+.right-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.del-btn {
+    padding: 5px 15px;
+    width: 50px;
+    margin-top: 8px;
+}
+
+/* Корзина */
+
+.back-catalog {
+    margin-top: 30px;
+    margin-left: 30px;
+}
+
+.back-link {
+    text-decoration: none;
+    color: rgb(63, 79, 82);
+    display: flex;
+    align-items: center;
+    &:hover .svg-arrow {
+        color: black;
+        fill: black;
+    }
+}
+
+.svg-arrow {
+    margin-right: 10px;
+    fill: rgb(63, 79, 82);
 }
