@@ -1,7 +1,7 @@
 Vue.component('products', {
     data() {
         return {
-            catalogUrl: '/catalogData.json',
+            catalogUrl: '',
             products: [],
             filtered: [],
             imgCatalog: 'https://via.placeholder.com/200x150',
@@ -14,7 +14,7 @@ Vue.component('products', {
         }
     },
     mounted() {
-        this.$parent.getJson(`${API + this.catalogUrl}`)
+        this.$parent.getJson('/api/products')
             .then(data => {
                 for (let el of data) {
                     this.products.push(el);
@@ -30,11 +30,6 @@ Vue.component('products', {
 });
 Vue.component('product', {
     props: ['product', 'img'],
-    data() {
-        return {
-            cartAPI: this.$root.$refs.cart,
-        };
-    },
 
     template: `
     <div class="product-item">
@@ -42,8 +37,7 @@ Vue.component('product', {
                 <div class="desc">
                     <h3>{{product.product_name}}</h3>
                     <p>{{product.price}}₽</p>
-                    <button class="buy-btn" @click="cartAPI.addProduct(product)">Купить</button>
-<!-- 1                    <button class="buy-btn" @click="$root.$refs.cart.addProduct(product)">Купить</button>-->
+                    <button class="buy-btn" @click="$root.$refs.cart.addProduct(product)">Купить</button>
 <!-- 2                    <button class="buy-btn" @click="$parent.$parent.$refs.cart.addProduct(product)">Купить</button>-->
                 </div>
             </div>
