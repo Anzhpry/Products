@@ -1,0 +1,182 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: FreeMono, monospace;
+}
+
+header {
+    background: rgb(63, 79, 82);
+    display: flex;
+    justify-content: space-between;
+    padding: 70px 150px;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+    color: rgb(192, 210, 212);
+}
+
+.cart {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.btn-cart {
+    position: relative;
+    color: rgb(44, 56, 58);
+    padding: 15px 33px;
+    box-shadow: 6px 4px 35px rgba(2, 19, 31, 0.644);
+    transition: 0.3s;
+    &:hover {
+        transform: scale(1.1);
+    }
+}
+
+.search-form {
+    align-self: end;
+}
+
+.search-field {
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid rgb(192, 210, 212);
+    padding: 7px 10px;
+    font-size: 16px;
+    color: rgb(192, 210, 212);
+    &:focus {
+        outline: none;
+    }
+}
+
+.btn-search {
+    background: none;
+}
+
+.products {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 30px;
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding: 0 70px;
+}
+
+.product-item {
+    border: 2px solid rgb(75, 115, 122);
+    border-radius: 27px;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.desc {
+    margin-top: 30px;
+    padding-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.buy-btn {
+    color: rgb(44, 56, 58);
+    padding: 5px 60px;
+    box-shadow: 6px 4px 35px rgba(2, 19, 31, 0.123);
+    align-self: center;
+    transition: 0.3s;
+    &:hover {
+        transform: scale(1.1);
+    }
+}
+
+/* Корзина в коталоге  */
+
+.cart-block {
+    position: absolute;
+    background: rgb(153, 157, 158);
+    border: 1px solid rgb(75, 115, 122);
+    border-radius: 15px;
+    padding: 15px 20px;
+    right: 70px;
+    top: 130px;
+}
+
+.cart-item {
+    padding-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.product-bio {
+    display: flex;
+    gap: 20px;
+
+    width: 50%;
+}
+
+.right-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.del-btn {
+    padding: 5px 15px;
+    width: 50px;
+    margin-top: 8px;
+}
+
+/* Корзина */
+
+.back-catalog {
+    margin-top: 30px;
+    margin-left: 30px;
+}
+
+.back-link {
+    text-decoration: none;
+    color: rgb(63, 79, 82);
+    display: flex;
+    align-items: center;
+    &:hover .svg-arrow {
+        color: black;
+        fill: black;
+    }
+}
+
+.svg-arrow {
+    margin-right: 10px;
+    fill: rgb(63, 79, 82);
+}
+
+.error-msg {
+    padding: 30px 20px;
+    background-color: red;
+    color: white;
+    position: relative;
+}
+.error-block {
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    display: flex;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+}
+.close-btn {
+    font-size: 1.5em;
+    top: -40px;
+    position: absolute;
+    right: 0;
+    background: none;
+    border: none;
+    color: white;
+    font-weight: bold;
+}

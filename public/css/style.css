@@ -1,0 +1,246 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: FreeMono, monospace;
+}
+
+header {
+  background: #3f4f52;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 70px 150px;
+}
+
+.logo {
+  font-size: 28px;
+  font-weight: bold;
+  color: #c0d2d4;
+}
+
+.cart {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 20px;
+}
+
+.btn-cart {
+  position: relative;
+  color: #2c383a;
+  padding: 15px 33px;
+  -webkit-box-shadow: 6px 4px 35px rgba(2, 19, 31, 0.644);
+          box-shadow: 6px 4px 35px rgba(2, 19, 31, 0.644);
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.btn-cart:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.search-form {
+  -ms-flex-item-align: end;
+      -ms-grid-row-align: end;
+      align-self: end;
+}
+
+.search-field {
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid #c0d2d4;
+  padding: 7px 10px;
+  font-size: 16px;
+  color: #c0d2d4;
+}
+
+.search-field:focus {
+  outline: none;
+}
+
+.btn-search {
+  background: none;
+}
+
+.products {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-top: 30px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0 70px;
+}
+
+.product-item {
+  border: 2px solid #4b737a;
+  border-radius: 27px;
+  width: 400px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 50px;
+}
+
+.desc {
+  margin-top: 30px;
+  padding-bottom: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.buy-btn {
+  color: #2c383a;
+  padding: 5px 60px;
+  -webkit-box-shadow: 6px 4px 35px rgba(2, 19, 31, 0.123);
+          box-shadow: 6px 4px 35px rgba(2, 19, 31, 0.123);
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.buy-btn:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+/* Корзина в коталоге  */
+.cart-block {
+  position: absolute;
+  background: #999d9e;
+  border: 1px solid #4b737a;
+  border-radius: 15px;
+  padding: 15px 20px;
+  right: 70px;
+  top: 130px;
+}
+
+.cart-item {
+  padding-bottom: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.product-bio {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 20px;
+  width: 50%;
+}
+
+.right-block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.del-btn {
+  padding: 5px 15px;
+  width: 50px;
+  margin-top: 8px;
+}
+
+/* Корзина */
+.back-catalog {
+  margin-top: 30px;
+  margin-left: 30px;
+}
+
+.back-link {
+  text-decoration: none;
+  color: #3f4f52;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.back-link:hover .svg-arrow {
+  color: black;
+  fill: black;
+}
+
+.svg-arrow {
+  margin-right: 10px;
+  fill: #3f4f52;
+}
+
+.error-msg {
+  padding: 30px 20px;
+  background-color: red;
+  color: white;
+  position: relative;
+}
+
+.error-block {
+  background-color: rgba(0, 0, 0, 0.5);
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.close-btn {
+  font-size: 1.5em;
+  top: -40px;
+  position: absolute;
+  right: 0;
+  background: none;
+  border: none;
+  color: white;
+  font-weight: bold;
+}
+/*# sourceMappingURL=style.css.map */
